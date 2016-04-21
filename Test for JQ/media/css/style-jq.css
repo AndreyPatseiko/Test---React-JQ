@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #444;
+}
+body>h2 {
+    margin: 1em;
+    color: white;
+    text-align: center;
+}
+#content {
+    position: relative;
+    width: 80%;
+    margin: 0 auto 3em;
+    border-radius: .9em;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+    background: #999;
+    padding: 1em 0.55607043558850787766450417052827% 1em;
+    min-height:44em;
+
+}
+#content>div:first-child {
+    width: 100%;
+    height: 100%;
+}
+#content:after {
+    content: '';
+    height: 0;
+    width: 100%;
+    clear: both;
+    display: block;
+}
+.box,
+.notefind {
+    width: 23.886%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .7);
+    float: left;
+    margin: .8% 0.55607043558850787766450417052827%;
+    text-align: center;
+    background: #bbb;
+    min-height: 19em;
+    position: relative;
+    padding-bottom: 2em;
+}
+.active.box {
+    margin: 0 auto 32px;
+}
+.box>h3,
+.notefind>h3 {
+    padding: .3em;
+    background: rgba(250, 70, 70, .8);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: .5em;
+    border-radius: 8px 8px 0 0;
+    min-height: 2.4em;
+}
+.notefind>h3 {
+    background: black;
+    color: white;
+}
+.notefind {
+    min-height: auto;
+}
+.box>img,
+.notefind>img {
+    margin: .5em 0 1em;
+    border-radius: 50%;
+}
+.price .contition {
+    display: none;
+}
+.price {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    margin-top: 1em;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.left {
+    width: 30%;
+    padding: .5em 1em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 20px 0 8px;
+    background: rgba(0, 0, 200, .8);
+    display: none;
+}
+.active .left {
+    display: block;
+}
+.active .right {
+    width: 19%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: .5em 1em;
+    border-radius: 20px 0 8px 0;
+    background: rgba(255, 0, 0, .8);
+}
+.about {
+    display: none;
+}
+.active .about {
+    margin: 1em;
+    display: block;
+    text-align: left;
+}
+.right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: .5em 1em;
+    border-radius: 20px 0 8px 0;
+    background: rgba(255, 0, 0, .8);
+}
+.box:hover {
+    cursor: pointer;
+    margin-top: 1.2%;
+    margin-bottom: 0.4%;
+    box-shadow: none;
+}
+.active.box:hover {
+    margin: 3px auto 29px;
+}
+.find {
+    width: 100%;
+    text-align: right;
+}
+#input {
+    padding: .5em;
+    width: 20%;
+    margin: .8%;
+    border: none;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 3px;
+    border: 1px solid darkgray;
+    color: white;
+}
+#input:focus {
+    border: 1px solid white;
+    background: black;
+    box-shadow: 0 0 3px white;
+}
+.active,
+.notefind {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    float: none;
+}
+.notefind {
+    display: none;
+    
+}

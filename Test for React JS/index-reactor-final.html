@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовое задание на React js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <link rel="stylesheet" href="media/css/style.css">
+</head>
+<body>
+    <h2>Тестовое заданин на ReactJS</h2>
+		<div id="content"> </div>
+
+    <script type="text/babel">
+
+        var CATALOG = [
+	{
+		id 		: 1,
+		name	: 'Празничная продукция',
+		img 	: 'media/img/img1.jpg',
+		price 	: '3$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique inventore delectus voluptatum nobis vitae tempora repellat cumque et repellendus accusantium autem.',
+		status	: 'Есть на складе'
+	},{
+		id 		: 2,
+		name	: 'Эмблемы и лого',
+		img 	: 'media/img/img2.jpg',
+		price 	: '13$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique inventore delectus voluptatum nobis vitae tempora repellat cumque et repellendus accusantium autem.',
+		status	: 'Есть на складе'
+	},{
+		id 		: 3,
+		name	: 'Овощи и фрукты',
+		img 	: 'media/img/img3.jpg',
+		price 	: '23$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique inventore delectus voluptatum nobis vitae tempora repellat cumque et repellendus accusantium autem.',
+		status	: 'Есть на складе'
+	},{
+		id 		: 4,
+		name	: 'Сувениры',
+		img 	: 'media/img/img4.jpg',
+		price 	: '33$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique inventore delectus voluptatum nobis vitae tempora repellat cumque et repellendus accusantium autem.',
+		status	: 'Есть на складе'
+	},{
+		id 		: 5,
+		name	: 'Детские игрушки',
+		img 	: 'media/img/img5.jpg',
+		price 	: '34$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique inventore delectus voluptatum nobis vitae tempora repellat cumque et repellendus accusantium autem.',
+		status	: 'Есть на складе'
+	},{
+		id 		: 6,
+		name	: 'Выпечка',
+		img 	: 'media/img/img6.jpg',
+		price 	: '43$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? orrupti, consequatur quibusdam porro similique inventore delectus voluptatum nobis vitae tempora repellat cumque et repellendus accusantium autem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique ',
+		status	: 'Есть на складе'
+	},{
+		id 		: 7,
+		name	: 'Товары Для Бани',
+		img 	: 'media/img/img7.jpg',
+		price 	: '53$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique inventore delectus voluptatum nobis vitae tempora repellat cumque et repellendus accusantium autem.',
+		status	: 'Есть на складе'
+	},{
+		id 		: 8,
+		name	: 'Мягкие игрушки',
+		img 	: 'media/img/img8.jpg',
+		price 	: '103$',
+		about 	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus voluptatem nobis asperiores at id, aliquam aliquid hic, dolorem veritatis unde natus quod quae repellendus aut sint deserunt? Sequi dignissimos distinctio expedita maxime ullam corrupti, consequatur quibusdam porro similique .',
+		status	: 'Есть на складе'
+	}];
+	var f={class: "box"};
+
+        var Box = React.createClass({
+        		render: function() {
+                return (
+                    	<div className={f.class} onClick={this.props.clickBox}>
+                			<h3>{this.props.name}</h3>
+                			<img src={this.props.img} alt="" />
+                			<p> OUTPUT {f.class} </p>
+							<p>Для получения более подробной информации о товаре кликнете.</p>
+							<div className="about">
+								<p>{this.props.about}</p>
+							</div>
+							<p className="price">
+								<span className="left">{this.props.status}</span>
+								<span className="right">{this.props.price}</span></p>							
+						</div>
+                );
+            }
+        });
+
+        var Content = React.createClass({ 				
+            getInitialState: function() {
+                return {
+                    displayedContBox: CATALOG
+                };
+            },
+            
+            clickBox:function(event){        		
+        		
+        		var x ='active box';
+        		f = {class : x};
+        		
+        		var s = event.target.className;
+				console.log(s);
+				f = {class : 'box red'};
+				
+				Content.setState({
+                    displayedContBox: displayedContBox
+                });
+        			
+        	},
+
+            handleSearch: function(event) {
+                var searchQuery = event.target.value.toLowerCase();
+                var displayedContBox = CATALOG.filter(function(el) {
+                    var searchValue = el.name.toLowerCase();
+                    return searchValue.indexOf(searchQuery) !== -1;
+                });
+
+                this.setState({
+                    displayedContBox: displayedContBox
+                });
+            },
+			
+            render: function() {
+            	var self = this;
+                return (
+                <div>
+                    <div id="find">
+                        <input type="text" id="input" onChange={this.handleSearch} placeholder="поиск..."/>
+                    </div>    
+                            {
+                               this.state.displayedContBox.map(function(el,i) {
+                                    return <Box
+                                        key={i}
+										name={el.name}
+										img={el.img}
+										price={el.price}
+										about={el.about}
+										status={el.status}
+										clickBox={self.clickBox}
+                                    />;
+                               })
+                            }
+                        
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <Content />,
+            document.getElementById("content")
+        );
+
+    </script>
+</body>
+</html>
